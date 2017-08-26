@@ -2,6 +2,11 @@ body{
 	/*background-color: pink;*/
 }
 
+.tabContainer{
+	margin: 1% 5% 2% 3%;
+  padding: 4% 0;
+}
+
 #container{
 	padding: 2%;
 }
