@@ -6,18 +6,22 @@
     <title>Working</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <link rel="stylesheet" type="text/css" href="./css/login.css">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" type="text/css" href="login.css"> -->
 
 </head>
 
 <body>
-    <h1>Data Insights</h1>
+    <h1 class="title">Data Insights</h1>
     <div class="container">
-        <div class="input-group input-group-lg">
-            <span class="input-group-addon">Kroger ID</span>
-            <input type="text" class="form-control" placeholder="Kroger ID">
-        </div><br>
+        <div class="container">
+            <div class="input-group input-group-lg" id="label">
+                <span class="input-group-addon">Kroger ID</span>
+                <input type="text" class="form-control" id="inputContainer" placeholder="Kroger ID">
+            </div><br>
+        </div>
+        <button type="submit" id="submit" class="btn btn-success bt-lg">Submit</button>
+
     </div>
 </body>
 
