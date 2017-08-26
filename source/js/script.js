@@ -1,8 +1,13 @@
 $(document).ready(function(){
 
-// $("#submit").click(function(){
-//     $("h1").hide(1000).show(1000);
-// })
+$("#submit").click(function(event){            
+    event.preventDefault(); 
+
+    window.location.href = "insights.html";
+
+    //need to navigate to the other page from button
+    $(window).click();    
+})
 
 
 
