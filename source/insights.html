@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Data Insights</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+	<div id="container">
+		<ul class="nav nav-tabs" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#data" role="tab">Data Visualization</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#rec" role="tab">Recommendations</a>
+			</li>
+		</ul>
+	</div>
+	<div class="tab-content">
+		<div class="tab-pane active" id="data" role="tabpanel"><p>Data</p></div>
+		<div class="tab-pane" id="rec" role="tabpanel"><p>Rec</p></div>
+	</div>
+	<script>
+		$('#myTab a').click(function (e) {
+			 e.preventDefault()
+			 $(this).tab('show')
+		});
+	</script>
+</body>
+</html>
+
