@@ -1,0 +1,15 @@
+.title {
+    text-align: center;
+}
+
+#inputContainer {
+    width: 400px;
+}
+
+#label {
+    padding-left: 300px;
+}
+
+#submit {
+    margin-left: 750px;
+}
