@@ -56,7 +56,7 @@ function initializeProductViz() {
     var placeholderDiv = document.getElementById("tableauProductViz")
     var url = "https://public.tableau.com/views/productsuggestions/Products?:embed=y&:display_count=no&:showVizHome=no";
     var options = {
-        width: 350,
+        width: 750,
         height: 350,
         hideTabs: true,
         hideToolbar: true,
