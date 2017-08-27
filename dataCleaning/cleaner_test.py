@@ -41,7 +41,6 @@ print "Product data length: {}".format(len(prod_data))
 print "Transaction data length: {}".format(len(trans_data))
 print "Demographic data length: {}".format(len(demo_data))
 """
-"""
+
 for d in cleaned_data:
 	print d
-"""
