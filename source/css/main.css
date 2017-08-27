@@ -14,3 +14,7 @@ body{
 	width: 150px;
 	margin-left: 50px;
 }
+
+#headerText {
+    color: white;
+}

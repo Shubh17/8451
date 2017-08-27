@@ -1,4 +1,5 @@
 var customerID = window.location.href.split('?')[1];
+document.getElementById("headerText").innerHTML = "<br>Welcome to the Kroger Customer Portal!&nbsp&nbsp&nbsp<br>Customer ID: " + customerID + "&nbsp&nbsp&nbsp";
 
 function initializeSpendViz() {
     var placeholderDiv = document.getElementById("tableauSpendViz")
@@ -19,7 +20,6 @@ function initializeSpendViz() {
 
 
 function filterSpendViz() {
-    customer = document.getElementById("customer").value
     viz.getWorkbook().getActiveSheet().getWorksheets()[0].applyFilterAsync("Household Key", customerID, tableau.FilterUpdateType.REPLACE)
     viz.getWorkbook().getActiveSheet().getWorksheets()[1].applyFilterAsync("Household Key", customerID, tableau.FilterUpdateType.REPLACE)
     viz.getWorkbook().getActiveSheet().getWorksheets()[2].applyFilterAsync("Household Key", customerID, tableau.FilterUpdateType.REPLACE)

@@ -11,9 +11,11 @@
     <script src="./js/dataViz.js" defer></script>
 </head>
 <body>
-	<div style ="background-color:blue">
+	<div style ="background-color:#33A4FF">
+        <div id="headerText" style="position: absolute; top: 0; right: 0; text-align:right;">
+    </div>
 	<img src ="image/k.png" id = "logo" class= "img img-responsive img-centered"alt="Kroger Logo">
-</div>
+    </div>
 	<div id="container">
 		<ul class="nav nav-tabs" role="tablist">
 			<li class="nav-item">
@@ -26,9 +28,6 @@
 	</div>
 	<div class="tab-content">
 		<div class="tab-pane active" id="data" role="tabpanel">
-            <form action="/action_page.php">
-                Customer ID: <input id = "customer" type="text" disabled>
-            </form>
             <div id="tableauSpendViz" align="center"></div>
         </div>
 		<div class="tab-pane" id="rec" role="tabpanel"><p>Rec</p></div>
