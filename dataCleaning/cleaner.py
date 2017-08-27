@@ -3,19 +3,19 @@ import csv
 cleaned_data = []
 
 prod_data = []
-with open('./product_sample.csv', 'r') as prod_file:
+with open('./product.csv', 'r') as prod_file:
 	prod_reader = csv.reader(prod_file, delimiter='\t', quotechar='|')
 	for row in prod_reader:
 		prod_data.append(row)
 
 trans_data = []
-with open('./transaction_sample.csv', 'r') as trans_file:
+with open('./transaction_data.csv', 'r') as trans_file:
 	trans_reader = csv.reader(trans_file, delimiter='\t', quotechar='|')
 	for row in trans_reader:
 		trans_data.append(row)
 
 demo_data = []
-with open('./demographics_sample.csv', 'r') as demo_file:
+with open('./hh_demographic.csv', 'r') as demo_file:
 	demo_reader = csv.reader(demo_file, delimiter='\t', quotechar='|')
 	for row in demo_reader:
 		demo_data.append(row)
