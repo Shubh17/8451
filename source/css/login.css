@@ -3,13 +3,18 @@
 }
 
 #inputContainer {
-    width: 400px;
+    width: 350px;
 }
 
 #label {
-    padding-left: 300px;
+    padding-left: 250px;
 }
 
 #submit {
-    margin-left: 750px;
+    margin-left: 600px;
+}
+
+#logo {
+    width: 200px;
+    margin-left: 500px;
 }
