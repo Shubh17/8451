@@ -5,3 +5,7 @@ body{
 #container{
 	padding: 2%;
 }
+#logo {
+	width: 150px;
+	margin-left: 50px;
+}
