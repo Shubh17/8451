@@ -91,5 +91,14 @@ setTimeout(function(){
             frequentlyBought.push(parsed[i][1].value)
         }
         console.log("FREQUENTLY BOUGHT: " + frequentlyBought)
+        
+        var options;
+        for (var j=0;j<10;j++) {
+            options += "<option value='"+frequentlyBought[j]+"'>"+frequentlyBought[j]+"</option>"
+        }
+        document.getElementById("frequent").innerHTML = "<select><option value='' disabled='disabled' selected='selected'>Select an item</option>"+options+"</select>"  
     },500)
+    
+
+    
 },5000)
