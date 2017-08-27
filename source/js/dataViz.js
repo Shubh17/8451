@@ -65,3 +65,31 @@ $(document).ready(function(){
             // }
         })
 })
+
+
+
+var table;
+var data;
+var frequentlyBought = [];
+
+setTimeout(function(){
+    console.log("Inside function")
+    worksheet = viz.getWorkbook().getActiveSheet().getWorksheets()[2]
+    console.log("Worksheet: " + worksheet)
+    worksheet.getSummaryDataAsync().then(function(t){
+        table = t;
+        data = JSON.stringify(table.getData())
+        console.log("Get summary Data: " + worksheet.getSummaryDataAsync())
+        console.log("table.getData: " + table.getData())
+    })
+    console.log("Got summary data: " + data)
+    
+    setTimeout(function() {
+        parsed = JSON.parse(data)
+        console.log("Parsed: " + parsed);
+        for (var i=0; i<10; i++) {
+            frequentlyBought.push(parsed[i][1].value)
+        }
+        console.log("FREQUENTLY BOUGHT: " + frequentlyBought)
+    },500)
+},5000)
