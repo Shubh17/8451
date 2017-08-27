@@ -71,6 +71,9 @@ $(document).ready(function(){
 var table;
 var data;
 var frequentlyBought = [];
+var categories = [];
+var selection;
+var products = ['wine','cheese','italian bread','wipes']
 
 setTimeout(function(){
     console.log("Inside function")
@@ -92,13 +95,19 @@ setTimeout(function(){
         }
         console.log("FREQUENTLY BOUGHT: " + frequentlyBought)
         
+        for (var i=0; i<10; i++) {
+            categories.push(parsed[i][0].value)
+        }
+        console.log("CATEGORIES: " + categories)
         var options;
         for (var j=0;j<10;j++) {
             options += "<option value='"+frequentlyBought[j]+"'>"+frequentlyBought[j]+"</option>"
         }
-        document.getElementById("frequent").innerHTML = "<select><option value='' disabled='disabled' selected='selected'>Select an item</option>"+options+"</select>"  
+        document.getElementById("frequent").innerHTML = "<select id='selection'><option value='' disabled='disabled' selected='selected'>Select an item</option>"+options+"</select>"
+        document.getElementById("openModal").onclick = function(){
+            selection = document.getElementById('selection').value;
+            category = categories[frequentlyBought.indexOf(selection)];
+            document.getElementById("id01").innerHTML = "<br>Items we carry similar to " + selection + ":<br><br>"
+        }
     },500)
-    
-
-    
-},5000)
+},8000)
