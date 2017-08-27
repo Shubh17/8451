@@ -2,9 +2,9 @@ $(document).ready(function(){
 
 $("#submit").click(function(event){            
     event.preventDefault(); 
-
-    window.location.href = "insights.html";
-
+    customerID = document.getElementById("inputContainer").value
+    window.location.href = "insights.html?" + customerID;
+//    console.log(customerID)
     //need to navigate to the other page from button
      $(window).click($());
 // var text = $("#inputContainer").val();
@@ -17,3 +17,4 @@ $("#submit").click(function(event){
 
 
 })
+

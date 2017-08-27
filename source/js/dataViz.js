@@ -1,3 +1,5 @@
+var customerID = window.location.href.split('?')[1];
+
 function initializeSpendViz() {
     var placeholderDiv = document.getElementById("tableauSpendViz")
     var url = "https://public.tableau.com/views/spend_viz1_blank/PurchaseAnalysis?:embed=y&:display_count=no&:showVizHome=no";
@@ -18,9 +20,9 @@ function initializeSpendViz() {
 
 function filterSpendViz() {
     customer = document.getElementById("customer").value
-    viz.getWorkbook().getActiveSheet().getWorksheets()[0].applyFilterAsync("Household Key", customer, tableau.FilterUpdateType.REPLACE)
-    viz.getWorkbook().getActiveSheet().getWorksheets()[1].applyFilterAsync("Household Key", customer, tableau.FilterUpdateType.REPLACE)
-    viz.getWorkbook().getActiveSheet().getWorksheets()[2].applyFilterAsync("Household Key", customer, tableau.FilterUpdateType.REPLACE)
+    viz.getWorkbook().getActiveSheet().getWorksheets()[0].applyFilterAsync("Household Key", customerID, tableau.FilterUpdateType.REPLACE)
+    viz.getWorkbook().getActiveSheet().getWorksheets()[1].applyFilterAsync("Household Key", customerID, tableau.FilterUpdateType.REPLACE)
+    viz.getWorkbook().getActiveSheet().getWorksheets()[2].applyFilterAsync("Household Key", customerID, tableau.FilterUpdateType.REPLACE)
 }
 
 initializeSpendViz();
