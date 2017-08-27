@@ -2,6 +2,7 @@ var customerID = window.location.href.split('?')[1];
 document.getElementById("headerText").innerHTML = "<br>Welcome to the Kroger Customer Portal!&nbsp&nbsp&nbsp<br>Customer ID: " + customerID + "&nbsp&nbsp&nbsp";
 
 function initializeSpendViz() {
+    $("#vizTab").click();
     var placeholderDiv = document.getElementById("tableauSpendViz")
     var url = "https://public.tableau.com/views/spend_viz1_blank/PurchaseAnalysis?:embed=y&:display_count=no&:showVizHome=no";
     var options = {
