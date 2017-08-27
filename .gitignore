@@ -3,3 +3,6 @@
 */hh_demographic.csv
 */product.csv
 */transaction_data.csv
+dataCleaning/csvFiles/hh_demographic.csv
+dataCleaning/csvFiles/product.csv
+dataCleaning/csvFiles/transaction_data.csv
