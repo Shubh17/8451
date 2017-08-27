@@ -5,6 +5,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="./css/main.css">
+    <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+    <script src="./js/dataViz.js" defer></script>
 </head>
 <body>
 	<div style ="background-color:blue">
@@ -21,7 +23,12 @@
 		</ul>
 	</div>
 	<div class="tab-content">
-		<div class="tab-pane active" id="data" role="tabpanel"><p>Data</p></div>
+		<div class="tab-pane active" id="data" role="tabpanel">
+            <form action="/action_page.php">
+                Customer ID: <input id = "customer" type="text" value="200" disabled>
+            </form>
+            <div id="tableauSpendViz" align="center"></div>
+        </div>
 		<div class="tab-pane" id="rec" role="tabpanel"><p>Rec</p></div>
 	</div>
 	<script>
