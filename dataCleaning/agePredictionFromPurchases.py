@@ -1,5 +1,6 @@
 from sklearn import svm
 import csv
+import pickle 
 
 cleaned_data = []
 
@@ -26,14 +27,14 @@ for i in range(1, len(demo_data)):#skip row 1
 	cleaned_data.append([0]*10)
 
 #print cleaned_data
-max_rows = 100000
-row_count = 0
+#max_rows = 100000
+#row_count = 0
 
 for i in range(0, len(trans_data)):
 	trans_row = trans_data[i][0].split(',')
-	row_count += 1
-	if(row_count > max_rows):
-		break
+	#row_count += 1
+	#if(row_count > max_rows):
+	#break
 	for j in range(0, len(demo_data)):
 		if(i != 0 and j != 0 and demo_data[j][0].split(',')[7] == trans_row[0]):#household keys equal
 			try:
@@ -64,21 +65,5 @@ for info in range(0, len(X)):
 clf = svm.SVC()
 clf.fit(X, y)
 
-total = 0
-correct = 0
-close = 0
-
-for p in range(0, len(X)):
-	if total > 2000:
-		break
-	prediction = clf.predict([X[p]])[0]
-	answer = y[p]
-	if prediction == answer:
-		correct += 1
-	elif abs(prediction - answer) < 2:
-		close += 1
-	total += 1
-
-print "% of correct answers {}".format(float(correct)/total)
-print "% of answers correct or off by one {}".format(float(close+correct)/total)
-
+filename = 'agePrediction_model.sav'
+pickle.dump(clf, open(filename, 'wb'))

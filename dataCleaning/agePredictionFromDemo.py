@@ -84,6 +84,7 @@ close = 0
 
 for p in range(0, len(X)):
 	prediction = clf.predict([X[p]])[0]
+	print X[p]
 	answer = y[p]
 	if prediction == answer:
 		correct += 1
