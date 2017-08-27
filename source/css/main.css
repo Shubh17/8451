@@ -34,3 +34,11 @@ button {
     cursor: pointer;
     border-radius: 12px;
 }
+
+canvas .tab-widget {
+    margin-left: 100% !important;
+}
+
+.tab-tvYLabel {
+    width: 530px !important;
+}
