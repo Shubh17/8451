@@ -1,5 +1,5 @@
 var customerID = window.location.href.split('?')[1];
-document.getElementById("headerText").innerHTML = "<br>Welcome to the Kroger Customer Portal!&nbsp&nbsp&nbsp<br>Customer ID: " + customerID + "&nbsp&nbsp&nbsp";
+document.getElementById("headerText").innerHTML = "Welcome to the Kroger Customer Portal!<br>Customer ID: " + customerID + "<br><button id='logout'>LOG OUT</button>";
 
 function initializeSpendViz() {
     $("#vizTab").click();
@@ -51,3 +51,17 @@ function filterCouponViz() {
 }
 
 //initializeCouponViz();
+
+
+$(document).ready(function(){
+    $("#logout").click(function(event){
+        window.location.href = "index.html";
+            //    console.log(customerID)
+            //need to navigate to the other page from button
+            $(window).click($());
+            // var text = $("#inputContainer").val();
+            // if (text=="yes") {
+            // console.log(text)
+            // }
+        })
+})
