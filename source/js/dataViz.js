@@ -19,7 +19,6 @@ function initializeSpendViz() {
     viz = new tableau.Viz(placeholderDiv, url, options)
 }
 
-
 function filterSpendViz() {
     viz.getWorkbook().getActiveSheet().getWorksheets()[0].applyFilterAsync("Household Key", customerID, tableau.FilterUpdateType.REPLACE)
     viz.getWorkbook().getActiveSheet().getWorksheets()[1].applyFilterAsync("Household Key", customerID, tableau.FilterUpdateType.REPLACE)
@@ -28,3 +27,27 @@ function filterSpendViz() {
 
 initializeSpendViz();
 
+
+function initializeCouponViz() {
+    var placeholderDiv = document.getElementById("tableauCouponViz")
+    var url = "https://public.tableau.com/views/coupon_analysis/CouponSavings?:embed=y&:display_count=no&:showVizHome=no";
+    var options = {
+        width: 1050,
+        height: 750,
+        hideTabs: true,
+        hideToolbar: true,
+        onFirstInteractive: function() {
+            workbook = viz.getWorkbook();
+            activeSheet = workbook.getActiveSheet();
+            filterCouponViz();
+        }
+    };
+    viz = new tableau.Viz(placeholderDiv, url, options)
+}
+
+function filterCouponViz() {
+    viz.getWorkbook().getActiveSheet().getWorksheets()[0].applyFilterAsync("Household Key", customerID, tableau.FilterUpdateType.REPLACE)
+    viz.getWorkbook().getActiveSheet().getWorksheets()[1].applyFilterAsync("Household Key", customerID, tableau.FilterUpdateType.REPLACE)
+}
+
+//initializeCouponViz();

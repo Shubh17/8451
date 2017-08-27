@@ -22,10 +22,10 @@
 				<a id="vizTab" class="nav-link" data-toggle="tab" href="#data" role="tab">My Spending</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" data-toggle="tab" href="#rec" role="tab">Recommendations</a>
+				<a class="nav-link" data-toggle="tab" href="#rec" role="tab" >Recommendations</a>
 			</li>
             <li class="nav-item">
-				<a class="nav-link" data-toggle="tab" href="#coupon" role="tab">Coupon Savings</a>
+				<a class="nav-link" data-toggle="tab" href="#coupon" role="tab"onclick="initializeCouponViz()">Coupon Savings</a>
 			</li>
 		</ul>
 	</div>
@@ -34,7 +34,8 @@
             <div id="tableauSpendViz" align="center"></div>
         </div>
 		<div class="tab-pane" id="rec" role="tabpanel"><p>Rec</p></div>
-		<div class="tab-pane" id="coupon" role="tabpanel"><p>Coupon Savings</p></div>
+		<div class="tab-pane" id="coupon" role="tabpanel">       <div id="tableauCouponViz" align="center"></div>
+        </div>
 	</div>
 	<script>
 		$('.tab-pane').eq(0).addClass('active');
