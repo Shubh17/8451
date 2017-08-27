@@ -6,8 +6,13 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="./css/main.css">
+    <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+    <script src="./js/dataViz.js" defer></script>
 </head>
 <body>
+	<div style ="background-color:blue">
+	<img src ="image/k.png" id = "logo" class= "img img-responsive img-centered"alt="Kroger Logo">
+</div>
 	<div id="container">
 		<ul class="nav nav-tabs" role="tablist">
 			<li class="nav-item">
@@ -20,21 +25,12 @@
 	</div>
 	<div class="tab-content">
 		<div class="tab-pane active" id="data" role="tabpanel">
-			<div class="tabContainer">
-				<p>Data</p>
-			</div>
-		</div>
-		<div class="tab-pane" id="rec" role="tabpanel">
-			<div class="tabContainer">
-				<p>Rec</p>
-				<select>
-					<option>Save Money</option>
-					<option>Live Better</option>
-					<option>Get taller</option>
-				</select>
-				<input type="submit" value="submit">
-			</div>
-		</div>
+            <form action="/action_page.php">
+                Customer ID: <input id = "customer" type="text" value="200" disabled>
+            </form>
+            <div id="tableauSpendViz" align="center"></div>
+        </div>
+		<div class="tab-pane" id="rec" role="tabpanel"><p>Rec</p></div>
 	</div>
 	<script>
 		$('.tab-pane').eq(0).addClass('active');
@@ -49,4 +45,3 @@
 	</script>
 </body>
 </html>
-

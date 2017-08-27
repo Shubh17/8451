@@ -1,0 +1,20 @@
+.title {
+    text-align: center;
+}
+
+#inputContainer {
+    width: 350px;
+}
+
+#label {
+    padding-left: 250px;
+}
+
+#submit {
+    margin-left: 600px;
+}
+
+#logo {
+    width: 200px;
+    margin-left: 500px;
+}
