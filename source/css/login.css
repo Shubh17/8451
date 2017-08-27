@@ -1,5 +1,7 @@
 .title {
     text-align: center;
+    font-family: Georgia;
+    padding-bottom: 15px;
 }
 
 #inputContainer {
