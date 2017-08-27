@@ -6,3 +6,6 @@
 dataCleaning/csvFiles/hh_demographic.csv
 dataCleaning/csvFiles/product.csv
 dataCleaning/csvFiles/transaction_data.csv
+dataCleaning/csvFiles/demo_test.csv
+dataCleaning/csvFiles/product_test.csv
+dataCleaning/csvFiles/transaction_test.csv
