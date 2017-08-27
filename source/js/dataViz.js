@@ -52,6 +52,26 @@ function filterCouponViz() {
 
 //initializeCouponViz();
 
+function initializeProductViz() {
+    var placeholderDiv = document.getElementById("tableauProductViz")
+    var url = "https://public.tableau.com/views/productsuggestions/Products?:embed=y&:display_count=no&:showVizHome=no";
+    var options = {
+        width: 350,
+        height: 350,
+        hideTabs: true,
+        hideToolbar: true,
+        onFirstInteractive: function() {
+            workbook = viz.getWorkbook();
+            activeSheet = workbook.getActiveSheet();
+            filterProductViz();
+        }
+    };
+    viz = new tableau.Viz(placeholderDiv, url, options)
+}
+
+function filterProductViz() {
+    viz.getWorkbook().getActiveSheet().applyFilterAsync("Commodity Desc", category, tableau.FilterUpdateType.REPLACE)
+}
 
 $(document).ready(function(){
     $("#logout").click(function(event){
@@ -107,7 +127,8 @@ setTimeout(function(){
         document.getElementById("openModal").onclick = function(){
             selection = document.getElementById('selection').value;
             category = categories[frequentlyBought.indexOf(selection)];
-            document.getElementById("id01").innerHTML = "<br>Items we carry similar to " + selection + ":<br><br>"
+            document.getElementById("id01").innerHTML = "<br>Items we carry similar to " + selection + ":<br><br><div id='tableauProductViz' align='center'></div>";
+            initializeProductViz();
         }
     },500)
 },8000)
