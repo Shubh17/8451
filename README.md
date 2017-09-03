@@ -1,4 +1,7 @@
 ## 8451 Hack for Food Recommendations
+
+Link to site [here](http://rawgit.com/Shubh17/8451/master/source/index.html)!<br><br>
+
 The goal of this project is to take the open dataset of shopping information from Kroger stores and generate insights from the data. Namely, we would like to be able to give shoppers the ability to visualize their purchases and recommend food options.
 <br /><br />
 We're using Tableau to visualize our dataset, and for recommending food products we're using a scikit learn's linear regression classification algorithm.  
