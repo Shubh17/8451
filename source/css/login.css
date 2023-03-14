@@ -1,20 +1,15 @@
 .title {
     text-align: center;
+    font-family: Georgia;
+    padding-bottom: 15px;
 }
 
 #inputContainer {
     width: 350px;
-}
-
-#label {
-    padding-left: 250px;
-}
-
-#submit {
-    margin-left: 600px;
+    height: 35px;
 }
 
 #logo {
     width: 200px;
-    margin-left: 500px;
+    margin: 5% auto;
 }

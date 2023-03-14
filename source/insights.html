@@ -3,35 +3,85 @@
 <head>
 	<title>Data Insights</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="./css/main.css">
     <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+    <script src="./js/script.js"></script>
     <script src="./js/dataViz.js" defer></script>
+
+		<style>
+    #banner {
+    	width: 100%;
+
+    	color: black;
+    	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    	background-size: 400% 400%;
+    	-webkit-animation: Gradient 15s ease infinite;
+    	-moz-animation: Gradient 15s ease infinite;
+    	animation: Gradient 15s ease infinite;
+    }
+
+    @-webkit-keyframes Gradient {
+    	0% {background-position: 0% 50%}
+    	50% {background-position: 100% 50%}
+    	100% {background-position: 0% 50%}
+    }
+    @-moz-keyframes Gradient {
+    	0% {background-position: 0% 50%}
+    	50% {background-position: 100% 50%}
+    	100% {background-position: 0% 50%}
+    }
+    @keyframes Gradient {
+    	0% {background-position: 0% 50%}
+    	50% {background-position: 100% 50%}
+    	100% {background-position: 0% 50%}
+    }
+
+    </style>
 </head>
 <body>
-	<div style ="background-color:blue">
-	<img src ="image/k.png" id = "logo" class= "img img-responsive img-centered"alt="Kroger Logo">
-</div>
+	<div style ="background-color:#33A4FF" id ="banner">
+        <div id="headerText" style="position: absolute; top: 0; right: 0; text-align:right;"></div>
+	   <img src ="image/k.png" id = "logo" class= "img img-responsive img-centered"alt="Kroger Logo">
+    </div>
 	<div id="container">
 		<ul class="nav nav-tabs" role="tablist">
 			<li class="nav-item">
-				<a class="nav-link" data-toggle="tab" href="#data" role="tab">Data Visualization</a>
+				<a id="vizTab" class="nav-link" data-toggle="tab" href="#data" role="tab">My Spending</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" data-toggle="tab" href="#rec" role="tab">Recommendations</a>
+				<a class="nav-link" data-toggle="tab" href="#rec" role="tab" >Recommendations</a>
+			</li>
+            <li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#coupon" role="tab"onclick="initializeCouponViz()">Coupon Savings</a>
 			</li>
 		</ul>
 	</div>
 	<div class="tab-content">
-		<div class="tab-pane active" id="data" role="tabpanel">
-            <form action="/action_page.php">
-                Customer ID: <input id = "customer" type="text" value="200" disabled>
-            </form>
+		<div class="tab-pane active" id="data" role="tabpanel" align="center">
+            <h3>Krogger Shopping Analysis</h3>
             <div id="tableauSpendViz" align="center"></div>
         </div>
-		<div class="tab-pane" id="rec" role="tabpanel"><p>Rec</p></div>
+		<div class="tab-pane" id="rec" role="tabpanel">
+			<div style="padding-left: 4%;">
+                <div id="freqBought" align="center">
+                    <h3>Items similar to what I frequently buy:</h3>
+                    <div id="frequent"></div><br>
+                    <div id="suggestions">
+                        <button class="w3-button w3-black" id="openModal">Find Items</button>
+                          <div id="id01">
+                          </div>
+                    </div>
+                </div>
+			</div>
+		</div>
+		<div class="tab-pane" id="coupon" role="tabpanel">
+            <div id="tableauCouponViz" align="center"></div>
+        </div>
 	</div>
+    
 	<script>
 		$('.tab-pane').eq(0).addClass('active');
 		$('a').click(function (e) {
